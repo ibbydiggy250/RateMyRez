@@ -27,9 +27,9 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
             </div>
             <div>
               <p className="font-[family-name:var(--font-heading)] text-lg font-semibold">
-                SBU Dorm Review App
+                RatemyRez
               </p>
-              <p className="text-sm text-[color:var(--muted)]">Housing decisions with better data</p>
+              <p className="text-sm text-[color:var(--muted)]">Stony Brook housing decisions with better data</p>
             </div>
           </Link>
 

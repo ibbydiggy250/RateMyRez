@@ -95,3 +95,25 @@ export type ReviewFormQuad = {
     slug: string;
   }>;
 };
+
+export type HomeSearchBuilding = {
+  id: string;
+  name: string;
+  slug: string;
+  quadName: string;
+  quadSlug: string;
+};
+
+export type HomeQuickViewQuad = {
+  id: string;
+  name: string;
+  slug: string;
+  averageRating: number;
+  buildingCount: number;
+  reviewCount: number;
+  buildings: Array<{
+    id: string;
+    name: string;
+    slug: string;
+  }>;
+};

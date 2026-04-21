@@ -3,6 +3,8 @@ import { createClient } from "@/lib/supabase/server";
 import type {
   BuildingDetail,
   BuildingRecord,
+  HomeQuickViewQuad,
+  HomeSearchBuilding,
   QuadBuildingSummary,
   QuadRecord,
   QuadSummary,
@@ -88,6 +90,46 @@ export async function getQuadSummaries(): Promise<QuadSummary[]> {
       reviewCount: allReviews.length
     };
   });
+}
+
+export async function getHomePageData(): Promise<{
+  quads: HomeQuickViewQuad[];
+  buildings: HomeSearchBuilding[];
+}> {
+  const quads = await getQuadsWithBuildings();
+
+  const quickViewQuads = quads.map((quad) => {
+    const allReviews = quad.buildings.flatMap((building) => building.reviews);
+
+    return {
+      id: quad.id,
+      name: quad.name,
+      slug: quad.slug,
+      averageRating: average(allReviews.map((review) => review.overall_rating)),
+      buildingCount: quad.buildings.length,
+      reviewCount: allReviews.length,
+      buildings: quad.buildings.map((building) => ({
+        id: building.id,
+        name: building.name,
+        slug: building.slug
+      }))
+    };
+  });
+
+  const searchBuildings = quickViewQuads.flatMap((quad) =>
+    quad.buildings.map((building) => ({
+      id: building.id,
+      name: building.name,
+      slug: building.slug,
+      quadName: quad.name,
+      quadSlug: quad.slug
+    }))
+  );
+
+  return {
+    quads: quickViewQuads,
+    buildings: searchBuildings
+  };
 }
 
 function toBuildingSummary(building: BuildingRecord): QuadBuildingSummary {

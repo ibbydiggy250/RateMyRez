@@ -16,9 +16,9 @@ const bodyFont = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
-  title: "SBU Dorm Review App",
+  title: "RatemyRez",
   description:
-    "Browse Stony Brook residence halls by quad, compare buildings, and leave structured dorm reviews."
+    "Browse Stony Brook residence halls by quad, compare buildings, and leave structured dorm reviews with RatemyRez."
 };
 
 export default async function RootLayout({
