@@ -23,7 +23,7 @@ export default async function QuadsPage() {
           <Link
             key={quad.id}
             href={`/quads/${quad.slug}`}
-            className="panel-strong group flex h-full flex-col justify-between p-6 transition hover:-translate-y-1"
+            className="panel-strong interactive-card flex h-full flex-col justify-between p-6"
           >
             <div className="space-y-4">
               <div className="flex items-start justify-between gap-4">

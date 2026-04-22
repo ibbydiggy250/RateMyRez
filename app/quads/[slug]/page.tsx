@@ -87,7 +87,7 @@ export default async function QuadPage({ params, searchParams }: QuadPageProps) 
           <Link
             key={building.id}
             href={`/buildings/${building.slug}`}
-            className="panel-strong flex h-full flex-col justify-between p-6 transition hover:-translate-y-1"
+            className="panel-strong interactive-card flex h-full flex-col justify-between p-6"
           >
             <div className="space-y-4">
               <div className="flex flex-wrap items-start justify-between gap-4">

@@ -106,60 +106,67 @@ export default async function HomePage() {
           {quads.map((quad) => (
             <article
               key={quad.id}
-              className="panel-strong min-w-[290px] snap-start p-5 sm:min-w-[320px]"
+              className="panel-strong interactive-card group relative min-w-[290px] snap-start p-5 sm:min-w-[320px]"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="eyebrow">Quad</p>
-                  <h3 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
-                    {quad.name}
-                  </h3>
-                </div>
-                <span className="rounded-full bg-[color:var(--brand-soft)] px-3 py-1 text-sm font-semibold text-[color:var(--brand-deep)]">
-                  {formatRating(quad.averageRating)}
-                </span>
-              </div>
-
-              <div className="mt-5 grid grid-cols-3 gap-3 text-center">
-                <div className="rounded-2xl bg-white/80 px-3 py-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
-                    Buildings
-                  </p>
-                  <p className="mt-2 text-xl font-semibold">{quad.buildingCount}</p>
-                </div>
-                <div className="rounded-2xl bg-white/80 px-3 py-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
-                    Reviews
-                  </p>
-                  <p className="mt-2 text-xl font-semibold">{quad.reviewCount}</p>
-                </div>
-                <div className="rounded-2xl bg-white/80 px-3 py-4">
-                  <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
-                    Avg
-                  </p>
-                  <p className="mt-2 text-xl font-semibold">{formatRating(quad.averageRating)}</p>
-                </div>
-              </div>
-
-              <div className="mt-5 flex flex-wrap gap-2">
-                {quad.buildings.slice(0, 6).map((building) => (
-                  <Link key={building.id} href={`/buildings/${building.slug}`} className="pill">
-                    {building.name}
-                  </Link>
-                ))}
-                {quad.buildings.length > 6 ? (
-                  <Link href={`/quads/${quad.slug}`} className="pill">
-                    +{quad.buildings.length - 6} more
-                  </Link>
-                ) : null}
-              </div>
-
               <Link
                 href={`/quads/${quad.slug}`}
-                className="mt-6 inline-flex text-sm font-semibold text-[color:var(--brand-deep)]"
-              >
-                Open {quad.name}
-              </Link>
+                aria-label={`Open ${quad.name}`}
+                className="absolute inset-0 z-10 rounded-panel"
+              />
+
+              <div className="pointer-events-none relative z-20">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="eyebrow">Quad</p>
+                    <h3 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
+                      {quad.name}
+                    </h3>
+                  </div>
+                  <span className="rounded-full bg-[color:var(--brand-soft)] px-3 py-1 text-sm font-semibold text-[color:var(--brand-deep)]">
+                    {formatRating(quad.averageRating)}
+                  </span>
+                </div>
+
+                <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+                  <div className="rounded-2xl bg-white/80 px-3 py-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                      Buildings
+                    </p>
+                    <p className="mt-2 text-xl font-semibold">{quad.buildingCount}</p>
+                  </div>
+                  <div className="rounded-2xl bg-white/80 px-3 py-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                      Reviews
+                    </p>
+                    <p className="mt-2 text-xl font-semibold">{quad.reviewCount}</p>
+                  </div>
+                  <div className="rounded-2xl bg-white/80 px-3 py-4">
+                    <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+                      Avg
+                    </p>
+                    <p className="mt-2 text-xl font-semibold">{formatRating(quad.averageRating)}</p>
+                  </div>
+                </div>
+
+                <div className="pointer-events-auto mt-5 flex flex-wrap gap-2">
+                  {quad.buildings.slice(0, 6).map((building) => (
+                    <Link key={building.id} href={`/buildings/${building.slug}`} className="pill">
+                      {building.name}
+                    </Link>
+                  ))}
+                  {quad.buildings.length > 6 ? (
+                    <Link href={`/quads/${quad.slug}`} className="pill">
+                      +{quad.buildings.length - 6} more
+                    </Link>
+                  ) : null}
+                </div>
+
+                <span
+                  className="mt-6 inline-flex text-sm font-semibold text-[color:var(--brand-deep)] transition group-hover:translate-x-0.5"
+                >
+                  Open {quad.name}
+                </span>
+              </div>
             </article>
           ))}
         </div>
