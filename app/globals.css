@@ -18,6 +18,11 @@
   --danger: #8f2230;
   --success-bg: rgba(49, 93, 146, 0.12);
   --success-foreground: #163d6b;
+  --navbar-deep: #6f0f13;
+  --navbar-mid: #91161b;
+  --navbar-bright: #c5322f;
+  --navbar-soft: #db4c45;
+  --navbar-edge: rgba(255, 255, 255, 0.18);
 }
 
 * {
@@ -70,6 +75,60 @@ a {
 
   .panel-strong {
     @apply rounded-panel border border-[color:var(--border)] bg-[color:var(--panel-strong)] shadow-glow backdrop-blur-sm;
+  }
+
+  .navbar-surface {
+    @apply rounded-panel relative overflow-hidden border shadow-glow;
+    border-color: var(--navbar-edge);
+    background-color: var(--navbar-deep);
+    background-image:
+      linear-gradient(124deg, transparent 0 14%, rgba(219, 76, 69, 0.92) 14% 30%, transparent 30% 100%),
+      linear-gradient(44deg, transparent 0 22%, rgba(197, 50, 47, 0.84) 22% 38%, transparent 38% 100%),
+      linear-gradient(144deg, transparent 0 46%, rgba(145, 22, 27, 0.92) 46% 60%, transparent 60% 100%),
+      linear-gradient(74deg, transparent 0 63%, rgba(219, 76, 69, 0.72) 63% 80%, transparent 80% 100%),
+      linear-gradient(174deg, rgba(111, 15, 19, 0.98), rgba(145, 22, 27, 0.98));
+    box-shadow:
+      0 24px 48px rgba(62, 8, 10, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  .navbar-surface::before {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(103deg, transparent 0 34%, rgba(255, 255, 255, 0.06) 34% 36%, transparent 36% 100%),
+      linear-gradient(160deg, transparent 0 58%, rgba(255, 255, 255, 0.05) 58% 60%, transparent 60% 100%);
+    content: "";
+    pointer-events: none;
+  }
+
+  .navbar-link {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium transition;
+    color: rgba(255, 255, 255, 0.94);
+  }
+
+  .navbar-link:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .navbar-email {
+    @apply hidden rounded-full px-4 py-2 text-sm font-medium md:inline-flex;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .navbar-action {
+    @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-semibold transition;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.94);
+    color: #6f0f13;
+  }
+
+  .navbar-action:hover {
+    @apply -translate-y-0.5;
+    background: white;
   }
 
   .eyebrow {

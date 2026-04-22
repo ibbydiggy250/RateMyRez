@@ -10,10 +10,10 @@ type SiteHeaderProps = {
 export function SiteHeader({ userEmail }: SiteHeaderProps) {
   return (
     <header className="shell sticky top-0 z-40 pt-4">
-      <div className="panel-strong relative overflow-hidden border-white/50 px-4 py-3 sm:px-6">
+      <div className="navbar-surface px-4 py-3 sm:px-6">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(166,34,49,0.1),rgba(22,61,107,0.4),rgba(166,34,49,0.1))]"
+          className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.45),rgba(255,255,255,0))]"
         />
         <div className="flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-3">
@@ -26,31 +26,31 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
               />
             </div>
             <div>
-              <p className="font-[family-name:var(--font-heading)] text-lg font-semibold">
+              <p className="font-[family-name:var(--font-heading)] text-lg font-semibold text-white">
                 RatemyRez
               </p>
-              <p className="text-sm text-[color:var(--muted)]">Stony Brook housing decisions with better data</p>
+              <p className="text-sm text-white/72">Stony Brook housing decisions with better data</p>
             </div>
           </Link>
 
           <div className="flex flex-wrap items-center gap-2">
-            <Link href="/quads" className="btn-ghost">
+            <Link href="/quads" className="navbar-link">
               Browse Dorms
             </Link>
-            <Link href="/review" className="btn-ghost">
+            <Link href="/review" className="navbar-link">
               Leave a Review
             </Link>
             {userEmail ? (
               <form action={signOut} className="flex items-center gap-2">
-                <span className="hidden rounded-full border border-[color:rgba(22,61,107,0.08)] bg-[color:var(--brand-soft)] px-4 py-2 text-sm font-medium text-[color:var(--brand-deep)] md:inline-flex">
+                <span className="navbar-email">
                   {userEmail}
                 </span>
-                <button type="submit" className="btn-secondary px-4 py-2">
+                <button type="submit" className="navbar-action">
                   Sign Out
                 </button>
               </form>
             ) : (
-              <Link href="/login" className="btn-primary px-4 py-2">
+              <Link href="/login" className="navbar-action">
                 Sign In
               </Link>
             )}
