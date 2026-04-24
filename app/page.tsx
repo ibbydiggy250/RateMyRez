@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HomeSearch } from "@/components/home-search";
+import { QuickViewScroller } from "@/components/quick-view-scroller";
 import { getHomePageData } from "@/lib/data";
 import { formatRating } from "@/lib/utils";
 import heroBackground from "@/logos/image copy.png";
@@ -62,7 +63,7 @@ export default async function HomePage() {
   return (
     <div className="pb-16 sm:pb-24">
       <section
-        className="relative isolate -mt-4 flex min-h-[620px] items-center justify-center overflow-hidden bg-cover bg-center px-4 py-24 text-white sm:min-h-[700px] sm:px-6"
+        className="relative isolate -mt-[88px] flex min-h-[100svh] items-center justify-center overflow-hidden bg-cover bg-center px-4 pb-20 pt-[132px] text-white sm:px-6"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(8, 18, 35, 0.34), rgba(8, 18, 35, 0.58)), linear-gradient(90deg, rgba(111, 15, 19, 0.42), rgba(22, 61, 107, 0.22)), url("${heroBackground.src}")`
         }}
@@ -87,17 +88,17 @@ export default async function HomePage() {
             <Link href="/quads" className="btn-primary">
               Browse Dorms
             </Link>
-            <Link
-              href="/review"
-              className="inline-flex items-center justify-center rounded-full border border-white/36 bg-white/92 px-5 py-3 text-sm font-semibold text-[color:var(--foreground)] shadow-[0_14px_30px_rgba(6,18,35,0.18)] transition hover:-translate-y-0.5 hover:bg-white"
-            >
+            <Link href="/review" className="btn-primary">
               Leave a Review
             </Link>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-[color:var(--border)] bg-white/58 py-12 backdrop-blur-sm sm:py-14">
+      <section
+        data-scroll-reveal
+        className="border-y border-[color:var(--border)] bg-white/58 py-12 backdrop-blur-sm sm:py-14"
+      >
         <div className="shell">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
@@ -134,7 +135,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="shell mt-14 space-y-5 sm:mt-20">
+      <section data-scroll-reveal className="shell mt-14 space-y-5 sm:mt-20">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-2">
             <p className="eyebrow">Quick View</p>
@@ -151,7 +152,7 @@ export default async function HomePage() {
           </Link>
         </div>
 
-        <div className="flex snap-x gap-4 overflow-x-auto pb-2">
+        <QuickViewScroller>
           {quads.map((quad) => (
             <article
               key={quad.id}
@@ -218,10 +219,10 @@ export default async function HomePage() {
               </div>
             </article>
           ))}
-        </div>
+        </QuickViewScroller>
       </section>
 
-      <section className="shell mt-16 sm:mt-24">
+      <section data-scroll-reveal className="shell mt-16 sm:mt-24">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
           <div className="space-y-3">
             <p className="eyebrow">Why RateMyRez</p>

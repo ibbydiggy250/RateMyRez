@@ -64,6 +64,44 @@ a {
   background: rgba(166, 34, 49, 0.2);
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes page-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page-transition {
+    animation: page-fade-in 520ms ease-out both;
+  }
+
+  [data-scroll-reveal].is-ready {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 640ms ease-out,
+      transform 640ms ease-out;
+  }
+
+  [data-scroll-reveal].is-ready.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scroll-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @layer components {
   .shell {
     @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
@@ -161,6 +199,10 @@ a {
 
   .btn-ghost {
     @apply inline-flex items-center justify-center rounded-full px-4 py-2 text-sm font-medium text-[color:var(--foreground)] transition hover:bg-[color:var(--brand-blue-soft)];
+  }
+
+  .scroll-arrow {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:rgba(22,61,107,0.14)] bg-white/80 text-lg font-semibold text-[color:var(--brand-deep)] shadow-[0_12px_28px_rgba(22,61,107,0.1)] transition hover:-translate-y-0.5 hover:bg-white;
   }
 
   .interactive-card {

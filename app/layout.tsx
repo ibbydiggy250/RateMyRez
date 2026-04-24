@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { PageTransition } from "@/components/page-transition";
 import { SiteHeader } from "@/components/site-header";
 import { createClient } from "@/lib/supabase/server";
 import { hasSupabaseEnv } from "@/lib/data";
@@ -43,7 +44,7 @@ export default async function RootLayout({
       >
         <div className="relative min-h-screen">
           <SiteHeader userEmail={userEmail} />
-          <main>{children}</main>
+          <PageTransition>{children}</PageTransition>
         </div>
       </body>
     </html>
