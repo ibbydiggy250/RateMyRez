@@ -42,7 +42,7 @@ export async function requestMagicLink(
   if (
     !consumeRateLimit({
       key: `magic-link:${email}:${clientIp}`,
-      limit: 5,
+      limit: 10,
       windowMs: 15 * 60 * 1000
     })
   ) {
