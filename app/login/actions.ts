@@ -4,7 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { hasSupabaseEnv } from "@/lib/data";
-import { consumeRateLimit, sanitizePlainText } from "@/lib/security";
+import { sanitizePlainText } from "@/lib/security";
 import { isSbuEmail } from "@/lib/utils";
 
 export type LoginState = {
@@ -34,24 +34,6 @@ export async function requestMagicLink(
   }
 
   const headerStore = await headers();
-  const clientIp =
-    headerStore.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    headerStore.get("x-real-ip") ??
-    "unknown";
-
-  if (
-    !consumeRateLimit({
-      key: `magic-link:${email}:${clientIp}`,
-      limit: 10,
-      windowMs: 15 * 60 * 1000
-    })
-  ) {
-    return {
-      error: "Too many login attempts. Please try again later.",
-      success: null
-    };
-  }
-
   const origin =
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     headerStore.get("origin") ??
