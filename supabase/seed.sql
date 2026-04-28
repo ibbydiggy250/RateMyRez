@@ -31,6 +31,29 @@ set slug = 'hendrix',
     name = 'Hendrix Hall'
 where slug = 'handel';
 
+update public.buildings
+set has_kitchen = true
+where slug = 'gershwin';
+
+update public.reviews
+set building_id = (select id from public.buildings where slug = 'gershwin')
+where building_id = (select id from public.buildings where slug = 'gershwin-three-bedroom')
+  and exists (select 1 from public.buildings where slug = 'gershwin')
+  and not exists (
+    select 1
+    from public.reviews existing
+    where existing.user_id = public.reviews.user_id
+      and existing.building_id = (select id from public.buildings where slug = 'gershwin')
+  );
+
+delete from public.buildings
+where slug = 'gershwin-three-bedroom'
+  and not exists (
+    select 1
+    from public.reviews
+    where building_id = (select id from public.buildings where slug = 'gershwin-three-bedroom')
+  );
+
 with quad_ids as (
   select id, slug from public.quads
 )
@@ -59,11 +82,10 @@ values
   ((select id from quad_ids where slug = 'tabler-quad'), 'Chinn Hall', 'chinn', 'Suite', false),
   ((select id from quad_ids where slug = 'tabler-quad'), 'Toscanini Hall', 'toscanini', 'Suite', false),
   ((select id from quad_ids where slug = 'roth-quad'), 'Cardozo Hall', 'cardozo', 'Suite', false),
-  ((select id from quad_ids where slug = 'roth-quad'), 'Gershwin Hall', 'gershwin', 'Suite', false),
+  ((select id from quad_ids where slug = 'roth-quad'), 'Gershwin Hall', 'gershwin', 'Suite', true),
   ((select id from quad_ids where slug = 'roth-quad'), 'Hendrix Hall', 'hendrix', 'Suite', false),
   ((select id from quad_ids where slug = 'roth-quad'), 'Mount Hall', 'mount', 'Suite', false),
   ((select id from quad_ids where slug = 'roth-quad'), 'Whitman Hall', 'whitman', 'Suite', false),
-  ((select id from quad_ids where slug = 'roth-quad'), 'Gershwin Hall (3-bedroom units)', 'gershwin-three-bedroom', 'Suite', true),
   ((select id from quad_ids where slug = 'living-learning-community'), 'Lauterbur Hall', 'lauterbur', 'Suite', false),
   ((select id from quad_ids where slug = 'living-learning-community'), 'Yang Hall', 'yang', 'Suite', false),
   ((select id from quad_ids where slug = 'living-learning-community'), 'Chavez Hall', 'chavez', 'Suite', false),
