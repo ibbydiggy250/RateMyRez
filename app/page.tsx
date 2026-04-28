@@ -63,7 +63,7 @@ export default async function HomePage() {
   return (
     <div className="pb-16 sm:pb-24">
       <section
-        className="relative isolate -mt-[88px] flex min-h-[100svh] items-center justify-center overflow-hidden bg-cover bg-center px-4 pb-20 pt-[132px] text-white sm:px-6"
+        className="relative isolate -mt-[104px] flex min-h-[calc(100svh+104px)] items-center justify-center overflow-hidden bg-cover bg-center px-4 pb-20 pt-[148px] text-white sm:px-6"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(8, 18, 35, 0.34), rgba(8, 18, 35, 0.58)), linear-gradient(90deg, rgba(111, 15, 19, 0.42), rgba(22, 61, 107, 0.22)), url("${heroBackground.src}")`
         }}
