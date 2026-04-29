@@ -63,7 +63,7 @@ export default async function HomePage() {
   return (
     <div className="pb-16 sm:pb-24">
       <section
-        className="relative isolate -mt-[104px] flex min-h-[calc(100svh+104px)] items-center justify-center overflow-hidden bg-cover bg-center px-4 pb-20 pt-[148px] text-white sm:px-6"
+        className="relative isolate -mt-[148px] flex min-h-[calc(100svh+148px)] items-center justify-center overflow-hidden bg-cover bg-center px-4 pb-16 pt-[188px] text-white sm:px-6 md:-mt-[104px] md:min-h-[calc(100svh+104px)] md:pb-20 md:pt-[148px]"
         style={{
           backgroundImage: `linear-gradient(180deg, rgba(8, 18, 35, 0.34), rgba(8, 18, 35, 0.58)), linear-gradient(90deg, rgba(111, 15, 19, 0.42), rgba(22, 61, 107, 0.22)), url("${heroBackground.src}")`
         }}
@@ -73,7 +73,7 @@ export default async function HomePage() {
           <p className="text-xs font-semibold uppercase tracking-[0.32em] text-white/78">
             Stony Brook Housing Guide
           </p>
-          <h1 className="mt-5 font-[family-name:var(--font-heading)] text-6xl font-bold tracking-tight text-white drop-shadow-[0_10px_32px_rgba(0,0,0,0.28)] sm:text-7xl lg:text-8xl">
+          <h1 className="mt-5 font-[family-name:var(--font-heading)] text-5xl font-bold tracking-tight text-white drop-shadow-[0_10px_32px_rgba(0,0,0,0.28)] sm:text-7xl lg:text-8xl">
             RateMyRez
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/82 sm:text-lg">

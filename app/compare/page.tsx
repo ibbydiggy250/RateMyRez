@@ -195,11 +195,11 @@ function CompareSummaryCard({
   sideLabel: string;
 }) {
   return (
-    <article className="panel-strong h-full p-6">
+    <article className="panel-strong h-full p-4 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="eyebrow">{sideLabel}</p>
-          <h2 className="mt-2 font-[family-name:var(--font-heading)] text-3xl font-semibold">
+          <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold sm:text-3xl">
             {building.name}
           </h2>
           <p className="mt-2 text-sm text-[color:var(--muted)]">{building.quad.name}</p>
@@ -245,7 +245,7 @@ function CompareSummaryCard({
 function CompareReviewsColumn({ building }: { building: BuildingDetail }) {
   return (
     <div className="space-y-5">
-      <div className="panel-strong p-6">
+      <div className="panel-strong p-4 sm:p-6">
         <p className="eyebrow">Reviews</p>
         <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
           {building.name}
@@ -256,7 +256,7 @@ function CompareReviewsColumn({ building }: { building: BuildingDetail }) {
       </div>
 
       {building.reviews.map((review) => (
-        <article key={review.id} className="panel-strong p-6">
+        <article key={review.id} className="panel-strong p-4 sm:p-6">
           <div className="flex flex-wrap gap-2">
             <span className="pill">{formatRating(review.overall_rating)}</span>
             <span className="pill">{review.class_year_when_lived}</span>
@@ -378,19 +378,19 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
           </div>
         </div>
 
-        <div className="panel-strong p-6 sm:p-8">
+        <div className="panel-strong p-4 sm:p-8">
           <p className="eyebrow">Current Matchup</p>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-[1.25rem] bg-white/80 p-5">
-              <p className="text-sm uppercase tracking-[0.16em] text-[color:var(--muted)]">Left dorm</p>
-              <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
+          <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-4">
+            <div className="rounded-[1.25rem] bg-white/80 p-4 sm:p-5">
+              <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted)] sm:text-sm">Left dorm</p>
+              <h2 className="mt-2 font-[family-name:var(--font-heading)] text-xl font-semibold sm:text-2xl">
                 {leftBuilding.name}
               </h2>
               <p className="mt-2 text-sm text-[color:var(--muted)]">{leftBuilding.quad.name}</p>
             </div>
-            <div className="rounded-[1.25rem] bg-white/80 p-5">
-              <p className="text-sm uppercase tracking-[0.16em] text-[color:var(--muted)]">Right dorm</p>
-              <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
+            <div className="rounded-[1.25rem] bg-white/80 p-4 sm:p-5">
+              <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted)] sm:text-sm">Right dorm</p>
+              <h2 className="mt-2 font-[family-name:var(--font-heading)] text-xl font-semibold sm:text-2xl">
                 {rightBuilding.name}
               </h2>
               <p className="mt-2 text-sm text-[color:var(--muted)]">{rightBuilding.quad.name}</p>
@@ -402,7 +402,7 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
         </div>
       </section>
 
-      <form action="/compare" className="panel mt-8 grid gap-4 p-5 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+      <form action="/compare" className="panel mt-8 grid gap-4 p-4 sm:p-5 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
         <label className="space-y-2 text-sm font-medium">
           <span>Left dorm</span>
           <select name="left" defaultValue={leftBuilding.slug} className="field">
@@ -450,7 +450,7 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
         <CompareSummaryCard building={rightBuilding} sideLabel="Right dorm" />
       </section>
 
-      <section className="panel-strong mt-8 overflow-hidden p-6 sm:p-8">
+      <section className="panel-strong mt-8 overflow-hidden p-4 sm:p-8">
         <p className="eyebrow">Metrics</p>
         <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
           Full comparison table
@@ -462,18 +462,18 @@ export default async function ComparePage({ searchParams }: ComparePageProps) {
                 <p className="font-semibold">{row.label}</p>
                 <p className="mt-1 text-sm text-[color:var(--muted)]">{row.description}</p>
               </div>
-              <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              <div className="mt-4 grid grid-cols-2 gap-2 sm:gap-3">
                 <div className="rounded-2xl border border-[color:var(--border)] bg-white/90 px-4 py-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted)]">
+                  <p className="text-[0.68rem] uppercase tracking-[0.12em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.16em]">
                     {leftBuilding.name}
                   </p>
-                  <p className="mt-2 text-lg font-semibold">{row.leftValue}</p>
+                  <p className="mt-2 break-words text-base font-semibold sm:text-lg">{row.leftValue}</p>
                 </div>
                 <div className="rounded-2xl border border-[color:var(--border)] bg-white/90 px-4 py-4">
-                  <p className="text-xs uppercase tracking-[0.16em] text-[color:var(--muted)]">
+                  <p className="text-[0.68rem] uppercase tracking-[0.12em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.16em]">
                     {rightBuilding.name}
                   </p>
-                  <p className="mt-2 text-lg font-semibold">{row.rightValue}</p>
+                  <p className="mt-2 break-words text-base font-semibold sm:text-lg">{row.rightValue}</p>
                 </div>
               </div>
             </div>

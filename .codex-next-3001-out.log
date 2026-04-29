@@ -1,0 +1,37 @@
+   ▲ Next.js 15.5.15
+   - Local:        http://localhost:3001
+   - Network:      http://172.25.113.133:3001
+   - Environments: .env.local
+
+ ✓ Starting...
+ ✓ Ready in 5.1s
+ ○ Compiling /middleware ...
+ ✓ Compiled /middleware in 676ms (167 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 5.9s (770 modules)
+ GET / 200 in 8188ms
+ GET / 200 in 1506ms
+ ○ Compiling /icon.png ...
+ ✓ Compiled /icon.png in 1043ms (523 modules)
+ GET /icon.png?bd5e6260ae098e1a 200 in 1556ms
+ ○ Compiling /compare ...
+ ✓ Compiled /compare in 1426ms (789 modules)
+ GET / 200 in 207ms
+ GET /compare 200 in 3749ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 154ms
+ GET /compare 200 in 1480ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 82ms
+ GET /compare 200 in 1136ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 56ms
+ GET / 200 in 195ms
+ GET / 200 in 1080ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 92ms
+ ✓ Compiled in 1758ms (770 modules)
+ GET / 200 in 910ms
+ GET / 200 in 1184ms
+ GET / 200 in 840ms
+ ✓ Compiled /icon.png in 486ms (523 modules)
+ GET /icon.png?bd5e6260ae098e1a 200 in 955ms
+ ✓ Compiled /compare in 340ms (525 modules)
+ GET /compare 200 in 1712ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 147ms

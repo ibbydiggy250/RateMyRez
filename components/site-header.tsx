@@ -30,7 +30,7 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
 
   return (
     <header className="shell sticky top-0 z-40 pt-4">
-      <div className="navbar-surface px-4 py-3 sm:px-6">
+      <div className="navbar-surface hidden px-4 py-3 sm:px-6 md:block">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,0.45),rgba(255,255,255,0))]"
@@ -83,6 +83,56 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
             )}
           </div>
         </div>
+      </div>
+
+      <div className="navbar-surface overflow-visible px-3 py-3 md:hidden">
+        <div className="flex items-center justify-between gap-3">
+          <Link href="/" className="flex min-w-0 items-center gap-2">
+            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-2xl border border-white/70 bg-white shadow-[0_10px_26px_rgba(22,61,107,0.12)]">
+              <Image
+                src={siteLogo}
+                alt="SBU Seawolves logo"
+                fill
+                sizes="44px"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <p className="truncate font-[family-name:var(--font-heading)] text-lg font-semibold text-white">
+              RateMyRez
+            </p>
+          </Link>
+
+          {userEmail ? (
+            <form action={signOut} className="flex shrink-0 items-center gap-2">
+              <span className="navbar-email inline-flex">
+                {userInitials}
+              </span>
+              <button type="submit" className="navbar-action px-3">
+                Sign Out
+              </button>
+            </form>
+          ) : (
+            <Link href="/login" className="navbar-action shrink-0 px-3">
+              Sign In
+            </Link>
+          )}
+        </div>
+
+        <nav
+          aria-label="Primary"
+          className="mt-3 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          <Link href="/quads" className="navbar-link shrink-0 px-3">
+            Browse
+          </Link>
+          <Link href="/compare" className="navbar-link shrink-0 px-3">
+            Compare
+          </Link>
+          <Link href="/review" className="navbar-link shrink-0 px-3">
+            Review
+          </Link>
+        </nav>
       </div>
     </header>
   );
