@@ -29,9 +29,9 @@ export function LoginForm({
   const codeSent = state.codeSent || requestState.codeSent;
 
   return (
-    <div className="panel-strong p-8 sm:p-10">
+    <div className="panel-strong p-5 sm:p-10">
       <p className="eyebrow">Email Login</p>
-      <h2 className="mt-2 font-[family-name:var(--font-heading)] text-3xl font-semibold">
+      <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold sm:text-3xl">
         Request a login code
       </h2>
       <p className="mt-3 text-[color:var(--muted)]">
