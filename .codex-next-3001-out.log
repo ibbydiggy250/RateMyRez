@@ -109,3 +109,10 @@
  GET /icon.png?bd5e6260ae098e1a 200 in 1339ms
  GET /quads 200 in 2014ms
  GET /icon.png?bd5e6260ae098e1a 200 in 71ms
+ GET / 200 in 1116ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 98ms
+ GET /quads 200 in 481ms
+ ○ Compiling /compare ...
+ ✓ Compiled /compare in 1515ms (541 modules)
+ GET /compare 200 in 447ms
+ GET /compare 200 in 3156ms
