@@ -112,21 +112,21 @@ export default async function HomePage() {
             </p>
           </div>
 
-          <div className="mt-9 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-9 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="border-l border-[color:rgba(18,35,61,0.14)] pl-5"
+                className="border-l border-[color:rgba(18,35,61,0.14)] pl-4 sm:pl-5"
               >
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[color:var(--brand-soft)] font-[family-name:var(--font-heading)] text-sm font-semibold text-[color:var(--brand-deep)]">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[color:var(--brand-soft)] font-[family-name:var(--font-heading)] text-xs font-semibold text-[color:var(--brand-deep)] sm:h-10 sm:w-10 sm:text-sm">
                     {stat.icon}
                   </span>
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[color:var(--muted)]">
+                  <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.2em]">
                     {stat.label}
                   </p>
                 </div>
-                <p className="mt-4 font-[family-name:var(--font-heading)] text-5xl font-semibold tracking-tight">
+                <p className="mt-3 font-[family-name:var(--font-heading)] text-4xl font-semibold tracking-tight sm:mt-4 sm:text-5xl">
                   {stat.value}
                 </p>
               </div>

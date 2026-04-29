@@ -35,3 +35,67 @@
  ✓ Compiled /compare in 340ms (525 modules)
  GET /compare 200 in 1712ms
  GET /icon.png?bd5e6260ae098e1a 200 in 147ms
+ GET / 200 in 763ms
+ ○ Compiling /quads ...
+ ✓ Compiled /quads in 2s (774 modules)
+ GET / 200 in 433ms
+ GET /quads 200 in 3541ms
+ ○ Compiling /icon.png ...
+ ✓ Compiled /icon.png in 710ms (527 modules)
+ GET /icon.png?bd5e6260ae098e1a 200 in 1225ms
+ ○ Compiling /quads/[slug] ...
+ ✓ Compiled /quads/[slug] in 868ms (779 modules)
+ GET /quads/chapin-apartments 200 in 4668ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 148ms
+ ○ Compiling /buildings/[slug] ...
+ ✓ Compiled /buildings/[slug] in 1827ms (784 modules)
+ GET /buildings/chapin-apartments 200 in 4834ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 128ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1125ms (792 modules)
+ GET /login 200 in 1669ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 111ms
+ ○ Compiling /review ...
+ ✓ Compiled /review in 1226ms (813 modules)
+ GET /review 307 in 2189ms
+ GET /login?next=%2Freview 200 in 245ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 118ms
+ GET /quads 200 in 1238ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 73ms
+ GET /quads/chapin-apartments 200 in 490ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 84ms
+ GET /buildings/keller-hall 404 in 578ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 88ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 84ms
+ GET /login 200 in 224ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 80ms
+ GET / 200 in 845ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 66ms
+ ✓ Compiled in 3.1s (790 modules)
+ GET / 200 in 634ms
+ ✓ Compiled in 1535ms (790 modules)
+ GET / 200 in 683ms
+ ✓ Compiled in 1703ms (790 modules)
+ GET / 200 in 377ms
+ ✓ Compiled in 1627ms (790 modules)
+ GET / 200 in 381ms
+ ✓ Compiled in 1544ms (790 modules)
+ GET / 200 in 454ms
+ ✓ Compiled in 1539ms (790 modules)
+ GET / 200 in 487ms
+ ✓ Compiled in 2.1s (790 modules)
+ GET / 200 in 537ms
+ ✓ Compiled in 1296ms (270 modules)
+ GET / 200 in 816ms
+ GET / 200 in 1491ms
+ ○ Compiling /icon.png ...
+ ✓ Compiled /icon.png in 1307ms (537 modules)
+ GET /icon.png?bd5e6260ae098e1a 200 in 1878ms
+ GET / 200 in 1136ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 68ms
+ GET /quads 200 in 475ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 70ms
+ GET /quads/chapin-apartments 200 in 507ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 70ms
+ GET /login 200 in 271ms
+ GET /icon.png?bd5e6260ae098e1a 200 in 72ms

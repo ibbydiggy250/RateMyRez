@@ -15,10 +15,10 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
       <div className="grid w-full gap-8 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="space-y-5">
           <p className="eyebrow">Verified Student Access</p>
-          <h1 className="font-[family-name:var(--font-heading)] text-5xl font-bold tracking-tight">
+          <h1 className="font-[family-name:var(--font-heading)] text-4xl font-bold tracking-tight sm:text-5xl">
             Sign in with your SBU email to leave a review.
           </h1>
-          <p className="max-w-xl text-lg leading-8 text-[color:var(--muted)]">
+          <p className="max-w-xl text-base leading-7 text-[color:var(--muted)] sm:text-lg sm:leading-8">
             Authentication is intentionally lightweight for the MVP. Students request a login code,
             sign in with a `@stonybrook.edu` address, and can then submit one review per building.
           </p>

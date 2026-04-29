@@ -85,20 +85,20 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
         </div>
       </div>
 
-      <div className="navbar-surface overflow-visible px-3 py-3 md:hidden">
+      <div className="navbar-surface overflow-visible rounded-[1.25rem] px-3 py-2.5 md:hidden">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex min-w-0 items-center gap-2">
-            <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-2xl border border-white/70 bg-white shadow-[0_10px_26px_rgba(22,61,107,0.12)]">
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden rounded-xl border border-white/70 bg-white shadow-[0_10px_26px_rgba(22,61,107,0.12)]">
               <Image
                 src={siteLogo}
                 alt="SBU Seawolves logo"
                 fill
-                sizes="44px"
+                sizes="40px"
                 className="object-cover"
                 priority
               />
             </div>
-            <p className="truncate font-[family-name:var(--font-heading)] text-lg font-semibold text-white">
+            <p className="truncate font-[family-name:var(--font-heading)] text-base font-semibold text-white">
               RateMyRez
             </p>
           </Link>
@@ -108,12 +108,12 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
               <span className="navbar-email inline-flex">
                 {userInitials}
               </span>
-              <button type="submit" className="navbar-action px-3">
+              <button type="submit" className="navbar-action px-3 py-1.5">
                 Sign Out
               </button>
             </form>
           ) : (
-            <Link href="/login" className="navbar-action shrink-0 px-3">
+            <Link href="/login" className="navbar-action shrink-0 px-3 py-1.5">
               Sign In
             </Link>
           )}
@@ -121,15 +121,15 @@ export function SiteHeader({ userEmail }: SiteHeaderProps) {
 
         <nav
           aria-label="Primary"
-          className="mt-3 flex gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-2 flex gap-2 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          <Link href="/quads" className="navbar-link shrink-0 px-3">
+          <Link href="/quads" className="navbar-link shrink-0 px-3 py-1.5 text-xs">
             Browse
           </Link>
-          <Link href="/compare" className="navbar-link shrink-0 px-3">
+          <Link href="/compare" className="navbar-link shrink-0 px-3 py-1.5 text-xs">
             Compare
           </Link>
-          <Link href="/review" className="navbar-link shrink-0 px-3">
+          <Link href="/review" className="navbar-link shrink-0 px-3 py-1.5 text-xs">
             Review
           </Link>
         </nav>

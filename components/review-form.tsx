@@ -64,7 +64,7 @@ export function ReviewForm({
   const activeBuildings = activeQuad?.buildings ?? [];
 
   return (
-    <form action={formAction} className="panel-strong space-y-8 p-6 sm:p-8">
+    <form action={formAction} className="panel-strong space-y-8 p-4 sm:p-8">
       <div className="grid gap-5 lg:grid-cols-2">
         <label className="space-y-2 text-sm font-medium">
           <span>Quad</span>
@@ -119,7 +119,7 @@ export function ReviewForm({
 
         <div className="grid gap-4 md:grid-cols-2">
           {ratingFieldDefinitions.map((field) => (
-            <label key={field.name} className="space-y-2 rounded-[1.25rem] bg-white/70 p-4 text-sm">
+            <label key={field.name} className="space-y-2 rounded-[1.25rem] bg-white/70 p-3 text-sm sm:p-4">
               <span className="block font-semibold">{field.label}</span>
               <span className="block text-sm text-[color:var(--muted)]">{field.helpText}</span>
               <select name={field.name} defaultValue="5" className="field" required>

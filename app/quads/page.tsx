@@ -23,7 +23,7 @@ export default async function QuadsPage() {
           <Link
             key={quad.id}
             href={`/quads/${quad.slug}`}
-            className="panel-strong interactive-card flex h-full flex-col justify-between p-6"
+            className="panel-strong interactive-card flex h-full flex-col justify-between p-4 sm:p-6"
           >
             <div className="space-y-4">
               <div className="flex items-start justify-between gap-4">
@@ -43,21 +43,21 @@ export default async function QuadsPage() {
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-3 gap-3 text-center">
-              <div className="rounded-2xl bg-white/80 px-3 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+            <div className="mt-6 grid grid-cols-3 gap-2 text-center sm:mt-8 sm:gap-3">
+              <div className="rounded-2xl bg-white/80 px-2 py-3 sm:px-3 sm:py-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
                   Buildings
                 </p>
                 <p className="mt-2 text-xl font-semibold">{quad.buildingCount}</p>
               </div>
-              <div className="rounded-2xl bg-white/80 px-3 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              <div className="rounded-2xl bg-white/80 px-2 py-3 sm:px-3 sm:py-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
                   Reviews
                 </p>
                 <p className="mt-2 text-xl font-semibold">{quad.reviewCount}</p>
               </div>
-              <div className="rounded-2xl bg-white/80 px-3 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              <div className="rounded-2xl bg-white/80 px-2 py-3 sm:px-3 sm:py-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
                   Avg
                 </p>
                 <p className="mt-2 text-xl font-semibold">{formatRating(quad.averageRating)}</p>

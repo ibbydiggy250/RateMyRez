@@ -37,23 +37,23 @@ export default async function QuadPage({ params, searchParams }: QuadPageProps) 
           </div>
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
-          <div className="panel px-5 py-4 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Avg</p>
+        <div className="grid grid-cols-3 gap-2 sm:gap-3">
+          <div className="panel px-3 py-3 text-center sm:px-5 sm:py-4">
+            <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">Avg</p>
             <p className="mt-2 text-2xl font-semibold">{formatRating(data.summary.averageRating)}</p>
           </div>
-          <div className="panel px-5 py-4 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Buildings</p>
+          <div className="panel px-3 py-3 text-center sm:px-5 sm:py-4">
+            <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">Buildings</p>
             <p className="mt-2 text-2xl font-semibold">{data.summary.buildingCount}</p>
           </div>
-          <div className="panel px-5 py-4 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Reviews</p>
+          <div className="panel px-3 py-3 text-center sm:px-5 sm:py-4">
+            <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">Reviews</p>
             <p className="mt-2 text-2xl font-semibold">{data.summary.reviewCount}</p>
           </div>
         </div>
       </div>
 
-      <form className="panel mt-8 grid gap-4 p-5 md:grid-cols-[1fr_1fr_auto] md:items-end">
+      <form className="panel mt-8 grid gap-4 p-4 sm:p-5 md:grid-cols-[1fr_1fr_auto] md:items-end">
         <label className="space-y-2 text-sm font-medium">
           <span>Filter by type</span>
           <select name="type" defaultValue={data.filters.type} className="field">
@@ -87,7 +87,7 @@ export default async function QuadPage({ params, searchParams }: QuadPageProps) 
           <Link
             key={building.id}
             href={`/buildings/${building.slug}`}
-            className="panel-strong interactive-card flex h-full flex-col justify-between p-6"
+            className="panel-strong interactive-card flex h-full flex-col justify-between p-4 sm:p-6"
           >
             <div className="space-y-4">
               <div className="flex flex-wrap items-start justify-between gap-4">
@@ -113,21 +113,21 @@ export default async function QuadPage({ params, searchParams }: QuadPageProps) 
               </p>
             </div>
 
-            <div className="mt-6 grid grid-cols-3 gap-3 text-center">
-              <div className="rounded-2xl bg-white/80 px-3 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+            <div className="mt-6 grid grid-cols-3 gap-2 text-center sm:gap-3">
+              <div className="rounded-2xl bg-white/80 px-2 py-3 sm:px-3 sm:py-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
                   Reviews
                 </p>
                 <p className="mt-2 text-xl font-semibold">{building.reviewCount}</p>
               </div>
-              <div className="rounded-2xl bg-white/80 px-3 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              <div className="rounded-2xl bg-white/80 px-2 py-3 sm:px-3 sm:py-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
                   Avg
                 </p>
                 <p className="mt-2 text-xl font-semibold">{formatRating(building.averageRating)}</p>
               </div>
-              <div className="rounded-2xl bg-white/80 px-3 py-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">
+              <div className="rounded-2xl bg-white/80 px-2 py-3 sm:px-3 sm:py-4">
+                <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">
                   Latest
                 </p>
                 <p className="mt-2 text-sm font-semibold">{building.latestReviewDateLabel}</p>

@@ -39,12 +39,12 @@ export default async function BuildingPage({ params }: BuildingPageProps) {
         </div>
 
         <div className="flex flex-wrap gap-3">
-          <div className="panel px-5 py-4 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Overall</p>
+          <div className="panel px-4 py-3 text-center sm:px-5 sm:py-4">
+            <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">Overall</p>
             <p className="mt-2 text-2xl font-semibold">{formatRating(building.averageRating)}</p>
           </div>
-          <div className="panel px-5 py-4 text-center">
-            <p className="text-xs uppercase tracking-[0.18em] text-[color:var(--muted)]">Reviews</p>
+          <div className="panel px-4 py-3 text-center sm:px-5 sm:py-4">
+            <p className="text-[0.68rem] uppercase tracking-[0.14em] text-[color:var(--muted)] sm:text-xs sm:tracking-[0.18em]">Reviews</p>
             <p className="mt-2 text-2xl font-semibold">{building.reviewCount}</p>
           </div>
           <Link href={`/review?building=${building.slug}`} className="btn-primary self-center">
@@ -54,7 +54,7 @@ export default async function BuildingPage({ params }: BuildingPageProps) {
       </div>
 
       <section className="mt-8 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <div className="panel-strong p-6">
+        <div className="panel-strong p-4 sm:p-6">
           <p className="eyebrow">Category Breakdown</p>
           <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
             Average category ratings
@@ -80,7 +80,7 @@ export default async function BuildingPage({ params }: BuildingPageProps) {
         </div>
 
         <div className="space-y-5">
-          <div className="panel-strong p-6">
+          <div className="panel-strong p-4 sm:p-6">
             <p className="eyebrow">Review Feed</p>
             <h2 className="mt-2 font-[family-name:var(--font-heading)] text-2xl font-semibold">
               What students say
@@ -88,7 +88,7 @@ export default async function BuildingPage({ params }: BuildingPageProps) {
           </div>
 
           {building.reviews.map((review) => (
-            <article key={review.id} className="panel-strong p-6">
+            <article key={review.id} className="panel-strong p-4 sm:p-6">
               <div className="flex flex-wrap items-start justify-between gap-4">
                 <div className="space-y-2">
                   <div className="flex flex-wrap gap-2">
